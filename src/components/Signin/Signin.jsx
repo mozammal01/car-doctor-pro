@@ -1,19 +1,19 @@
 'use client'
 
-import Link from "next/link";
-import loginImg from "../../../public/assets/images/login/login.svg";
-import { signIn } from 'next-auth/react'
-import Image from "next/image";
-import { useRouter, useSearchParams } from "next/navigation";
 import SocialLogin from "@/components/SocialLogin/SocialLogin";
+import { signIn } from 'next-auth/react';
+import Image from "next/image";
+import Link from "next/link";
+import { useRouter } from "next/navigation";
+import { use } from "react";
 import Swal from "sweetalert2";
+import loginImg from "../../../public/assets/images/login/login.svg";
 
-const SignIn = () => {
+const SignIn = (props) => {
 
   const router = useRouter();
-
-  const searchParams = useSearchParams();
-  const path = searchParams.get('redirect')
+  const searchParams = use(props.searchParams)
+  const path = searchParams.redirect;
 
   const handleSubmit = async (e) => {
     e.preventDefault();
