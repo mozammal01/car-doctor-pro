@@ -1,4 +1,5 @@
 'use client'
+
 import Link from "next/link";
 import loginImg from "../../../public/assets/images/login/login.svg";
 import { signIn } from 'next-auth/react'
@@ -14,7 +15,7 @@ const SignIn = () => {
   const searchParams = useSearchParams();
   const path = searchParams.get('redirect')
 
-  const handleSubmit = async e => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
     const email = e.target.email.value;
     const password = e.target.password.value;

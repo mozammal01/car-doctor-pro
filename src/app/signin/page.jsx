@@ -1,6 +1,6 @@
 import SignIn from "@/components/Signin/Signin";
 
-const Page = () => {
+const SignInPage = () => {
 
   return (
     <div>
@@ -10,4 +10,4 @@ const Page = () => {
   );
 };
 
-export default Page;
+export default SignInPage;
