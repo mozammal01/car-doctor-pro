@@ -4,14 +4,9 @@ import { useRouter } from "next/navigation";
 import { FaFacebook, FaGithub } from "react-icons/fa6";
 import { FcGoogle } from "react-icons/fc";
 
-const SocialLogin = (props) => {
+const SocialLogin = ({path}) => {
 
   const router = useRouter();
-
-
-  const searchParams = use(props.searchParams)
-  const path = searchParams.redirect
-
 
   const session = useSession();
 

@@ -6,7 +6,9 @@ import axios from "axios";
 import SocialLogin from "@/components/SocialLogin/SocialLogin";
 import Swal from "sweetalert2";
 
-const SignUpPage = () => {
+const SignUpPage = (props) => {
+  const searchParams = use(props.searchParams)
+  const path = searchParams.redirect
 
   const handleSubmit = async e => {
     e.preventDefault();
@@ -71,7 +73,7 @@ const SignUpPage = () => {
           <div className="text-center">
             <p>Or Sign Up With </p>
             <br />
-            <SocialLogin />
+            <SocialLogin path={path} />
           </div>
           <p className="text-center">Do Not have an account ? <Link href='/signin'><span className="text-blue-700 underline font-bold">Sign In</span></Link></p>
         </div>
