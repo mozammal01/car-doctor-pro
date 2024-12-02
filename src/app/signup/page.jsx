@@ -1,10 +1,11 @@
 'use client'
+import SocialLogin from "@/components/SocialLogin/SocialLogin";
+import axios from "axios";
 import Image from "next/image";
 import Link from "next/link";
-import loginImg from "../../../public/assets/images/login/login.svg";
-import axios from "axios";
-import SocialLogin from "@/components/SocialLogin/SocialLogin";
+import { use } from "react";
 import Swal from "sweetalert2";
+import loginImg from "../../../public/assets/images/login/login.svg";
 
 const SignUpPage = (props) => {
   const searchParams = use(props.searchParams)
