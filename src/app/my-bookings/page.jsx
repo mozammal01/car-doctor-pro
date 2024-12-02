@@ -11,7 +11,7 @@ const MyBookings = () => {
   const session = useSession();
 
   useEffect(() => {
-    axios.get(`http://localhost:3000/my-bookings/api/${session?.data?.user?.email}`)
+    axios.get(`https://car-doctor-pro-phi.vercel.app/my-bookings/api/${session?.data?.user?.email}`)
       .then(data => setBookings(data.data.booking))
       .catch(err => console.log(err)
       )
@@ -19,7 +19,7 @@ const MyBookings = () => {
 
   const handleDelete = async (id) => {
     console.log('Deleted Id', id);
-    const res = await axios.delete(`http://localhost:3000/my-bookings/api/booking/${id}`)
+    const res = await axios.delete(`https://car-doctor-pro-phi.vercel.app/my-bookings/api/booking/${id}`)
     console.log(res.data);
     // const deleted = res.datajson();
     console.log(res.data.res.deletedCount);
@@ -36,7 +36,7 @@ const MyBookings = () => {
       })
         .then((result) => {
           if (result.isConfirmed) {
-            axios.get(`http://localhost:3000/my-bookings/api/${session?.data?.user?.email}`)
+            axios.get(`https://car-doctor-pro-phi.vercel.app/my-bookings/api/${session?.data?.user?.email}`)
               .then(data => setBookings(data.data.booking))
               .catch(err => console.log(err))
             Swal.fire({
@@ -53,7 +53,7 @@ const MyBookings = () => {
 
   const handleUpdate = async (id) => {
     console.log(id);
-    const res = await axios.get(`http://localhost:3000/my-bookings/api/booking/${id}`)
+    const res = await axios.get(`https://car-doctor-pro-phi.vercel.app/my-bookings/api/booking/${id}`)
     // console.log(res.data);
   }
   // console.log(bookings);

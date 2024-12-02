@@ -3,9 +3,9 @@ import SocialLogin from "@/components/SocialLogin/SocialLogin";
 import axios from "axios";
 import Image from "next/image";
 import Link from "next/link";
-import { use } from "react";
 import Swal from "sweetalert2";
 import loginImg from "../../../public/assets/images/login/login.svg";
+import { use } from "react";
 
 const SignUpPage = (props) => {
   const searchParams = use(props.searchParams)
@@ -25,7 +25,7 @@ const SignUpPage = (props) => {
     }
     console.log(newUser);
 
-    const res = await axios.post('http://localhost:3000/signup/api', newUser)
+    const res = await axios.post('https://car-doctor-pro-phi.vercel.app/signup/api', newUser)
     if (res.status === 200) {
       Swal.fire({
         position: "top-end",
@@ -34,7 +34,6 @@ const SignUpPage = (props) => {
         showConfirmButton: false,
         timer: 1500
       });
-      router.push('/')
     }
     console.log(res.data);
   }

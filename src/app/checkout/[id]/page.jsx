@@ -35,7 +35,7 @@ const Checkout = ({ params }) => {
       serviceTitle: title,
     }
 
-    const res = await axios.post('http://localhost:3000/checkout/api/new-booking', newBookings)
+    const res = await axios.post('https://car-doctor-pro-phi.vercel.app/checkout/api/new-booking', newBookings)
     if (res.status === 200) {
       Swal.fire({
         position: "top-end",

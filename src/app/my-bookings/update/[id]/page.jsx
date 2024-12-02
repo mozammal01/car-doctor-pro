@@ -16,7 +16,7 @@ const UpdateBooking = ({ params }) => {
   const { data } = useSession();
 
   useEffect(() => {
-    axios.get(`http://localhost:3000/my-bookings/api/booking/${params.id}`)
+    axios.get(`https://car-doctor-pro-phi.vercel.app/my-bookings/api/booking/${params.id}`)
       .then(data => setService(data.data.res))
   }, [params])
 
@@ -38,7 +38,7 @@ const UpdateBooking = ({ params }) => {
     }
 
     console.log('form', newBookings);
-    const res = await axios.patch(`http://localhost:3000/my-bookings/api/booking/${_id}`, newBookings)
+    const res = await axios.patch(`https://car-doctor-pro-phi.vercel.app/my-bookings/api/booking/${_id}`, newBookings)
     if (res?.data?.res?.modifiedCount > 0) {
       Swal.fire({
         position: "top-end",
