@@ -1,16 +1,16 @@
 'use client'
 import { signIn, useSession } from "next-auth/react";
-import { useRouter, useSearchParams } from "next/navigation";
+import { useRouter } from "next/navigation";
 import { FaFacebook, FaGithub } from "react-icons/fa6";
 import { FcGoogle } from "react-icons/fc";
 
-const SocialLogin = () => {
+const SocialLogin = (props) => {
 
   const router = useRouter();
 
 
-  const searchParams = useSearchParams();
-  const path = searchParams.get('redirect')
+  const searchParams = use(props.searchParams)
+  const path = searchParams.redirect
 
 
   const session = useSession();

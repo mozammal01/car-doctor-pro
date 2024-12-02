@@ -6,7 +6,7 @@ import axios from "axios";
 import SocialLogin from "@/components/SocialLogin/SocialLogin";
 import Swal from "sweetalert2";
 
-const page = () => {
+const SignUpPage = () => {
 
   const handleSubmit = async e => {
     e.preventDefault();
@@ -80,4 +80,4 @@ const page = () => {
   );
 };
 
-export default page;
+export default SignUpPage;
